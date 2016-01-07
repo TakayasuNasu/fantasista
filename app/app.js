@@ -1,7 +1,7 @@
 import express from 'express';
-import setupExpress from './setup/express';
+import init from './config/application';
 
 const app = express();
-setupExpress(app);
+init(app);
 
 export default app;
