@@ -6,6 +6,7 @@ gulp.task('server', () => {
   nodemon({
     script: config.server.script,
     exec:   config.server.exec,
-    ignore: config.server.ignore
+    ignore: config.server.ignore,
+    legacyWatch: true
   });
 });
