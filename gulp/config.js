@@ -2,6 +2,7 @@ export default  {
   server: {
     script: './.bin/www',
     exec:   'DEBUG=express:* ./node_modules/.bin/babel-node',
+    ext:    'js html css',
     ignore: ['node_modules']
   },
   browserSync: {

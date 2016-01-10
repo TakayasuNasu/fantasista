@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-class CommentBox extends React.Component {
+export default class CommentBox extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -10,12 +10,8 @@ class CommentBox extends React.Component {
     return(
       <div className='commentBox'>
         Hello, world! I am a CommentBox.
+        <p>hoge</p>
       </div>
     );
   }
 }
-
-render(
-  <CommentBox />,
-  document.getElementById('container')
-);

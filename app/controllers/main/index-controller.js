@@ -1,14 +1,17 @@
-import express from 'express';
+import React from "react";
+import CommentBox from "../../public/js/index";
 
+export default class IndexController {
+  constructor() {
 
-var router = express.Router();
+  }
 
-router.get('/', (req, res, next) => {
-  res.render('main/index', { title: 'Express' });
-});
+  index(req, res) {
+    res.render('main/index', { title: 'Hello world' });
+  }
 
-router.get('/hello', (req, res, next) => {
-  res.render('main/index', { title: 'the world!!!' });
-});
-
-export default router;
+  hello(req, res) {
+    let content = React.renderToString(<CommentBox />);
+    res.render('main/index', { title: 'the world!!!', content: content });
+  }
+}

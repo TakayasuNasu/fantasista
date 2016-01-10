@@ -6,7 +6,7 @@ export default class UserController {
   }
 
   index(req, res, next) {
-    res.render('main/index', { title: 'users index' });
+    res.render('main/index', { title: `${this.name} is ${req.params.id}` });
   }
 
 }

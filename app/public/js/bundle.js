@@ -3,6 +3,10 @@
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -32,7 +36,12 @@ var CommentBox = (function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'commentBox' },
-        'Hello, world! I am a CommentBox.'
+        'Hello, world! I am a CommentBox.',
+        _react2.default.createElement(
+          'p',
+          null,
+          'hoge'
+        )
       );
     }
   }]);
@@ -40,7 +49,7 @@ var CommentBox = (function (_React$Component) {
   return CommentBox;
 })(_react2.default.Component);
 
-(0, _reactDom.render)(_react2.default.createElement(CommentBox, null), document.getElementById('container'));
+exports.default = CommentBox;
 
 },{"react":159,"react-dom":3}],2:[function(require,module,exports){
 // shim for using process in browser
