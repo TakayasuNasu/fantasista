@@ -1,9 +1,8 @@
-import React from "react";
-import CommentBox from "../../public/js/index";
+import Comment from "../../models/comments/comment";
 
 export default class IndexController {
   constructor() {
-
+    this.comment = new Comment();
   }
 
   index(req, res) {
@@ -11,7 +10,10 @@ export default class IndexController {
   }
 
   hello(req, res) {
-    let content = React.renderToString(<CommentBox />);
-    res.render('main/index', { title: 'the world!!!', content: content });
+    res.render('main/index/hellos',
+      {
+        title:   'the world!!!',
+        content: this.comment.getContent()
+      });
   }
 }

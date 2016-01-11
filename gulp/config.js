@@ -12,11 +12,11 @@ export default  {
   watch: {
     js:       './app/public/js/index.js',
     html:     './app/public/html/index.html',
-    app:      './app/**/*.js',
+    app:      './app/client/**/*.js',
     options: ['build']
   },
   build: {
-    entries: ['./app/public/js/index.js'],
+    entries: ['./app/client/components/comments/comment.js'],
     source:  'bundle.js',
     dest:    './app/public/js'
   }
