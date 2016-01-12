@@ -2,8 +2,8 @@ export default  {
   server: {
     script: './.bin/www',
     exec:   'DEBUG=express:* ./node_modules/.bin/babel-node',
-    ext:    'js html css',
-    ignore: ['node_modules']
+    ext:    'js',
+    ignore: ['node_modules', 'app/mock/']
   },
   browserSync: {
     target: 'http://localhost:3000',

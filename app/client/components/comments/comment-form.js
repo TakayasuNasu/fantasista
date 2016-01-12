@@ -1,16 +1,17 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 export default class CommentForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
-    const author = React.findDOMNode(this.refs.author).value.trim();
-    const text = React.findDOMNode(this.refs.text).value.trim();
+    const author = ReactDOM.findDOMNode(this.refs.author).value.trim();
+    const text = ReactDOM.findDOMNode(this.refs.text).value.trim();
     if (!text || !author) {
       return;
     }
     this.props.onCommentSubmit({author: author, text: text});
-    React.findDOMNode(this.refs.author).value = '';
-    React.findDOMNode(this.refs.text).value = '';
+    ReactDOM.findDOMNode(this.refs.author).value = '';
+    ReactDOM.findDOMNode(this.refs.text).value = '';
   }
   render() {
     return (

@@ -1,13 +1,6 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import configureStore from './client/store/configureStore';
-import App from './client/containers/app';
+import ReactDOM from 'react-dom';
+import Comment from "./models/comment";
 
-const store = configureStore();
-
-React.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('content')
-);
+const comment = new Comment();
+ReactDOM.render(comment.getCommentJsx(), document.getElementById('content'));

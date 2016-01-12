@@ -10,12 +10,12 @@ export default class Comment extends Base{
     super(title);
   }
 
-  getContent() {
+  getCommentJsx() {
     const store = configureStore();
-    return ReactDOMServer.renderToString(
-      <Provider store={store}>
-        <App />
-      </Provider>
-    );
+    return <Provider store={store}><App /></Provider>
+  }
+
+  getContent() {
+    return ReactDOMServer.renderToString(this.getCommentJsx());
   }
 }

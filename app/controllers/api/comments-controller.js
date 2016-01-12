@@ -13,7 +13,7 @@ export default class CommentsController {
       } else {
         const comments = JSON.parse(data);
         comments.push(req.body);
-        fs.writeFile('comments.json', JSON.stringify(comments, null, 4), (err) => {
+        fs.writeFile(`${process.cwd()}/app/mock/comments.json`, JSON.stringify(comments, null, 4), (err) => {
           res.setHeader('Cache-Control', 'no-cache');
           res.json(comments);
         });

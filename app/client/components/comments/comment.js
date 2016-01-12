@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import marked from 'marked'
 
 export default class Comment extends Component {
   rawMarkup() {
