@@ -1,8 +1,8 @@
-import Comment from "../../models/comments/comment";
+import Comment from "../../models/comment";
 
 export default class IndexController {
   constructor() {
-    this.comment = new Comment();
+    this.comment = new Comment('The world!!!');
   }
 
   index(req, res) {
@@ -12,7 +12,7 @@ export default class IndexController {
   hello(req, res) {
     res.render('main/index/hellos',
       {
-        title:   'the world!!!',
+        title:   this.comment.getTitle(),
         content: this.comment.getContent()
       });
   }

@@ -16,7 +16,7 @@ export default  {
     options: ['build']
   },
   build: {
-    entries: ['./app/client/components/comments/comment.js'],
+    entries: ['./app/index.js'],
     source:  'bundle.js',
     dest:    './app/public/js'
   }

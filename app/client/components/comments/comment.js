@@ -1,17 +1,23 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React, { Component, PropTypes } from 'react';
 
-export default class CommentBox extends React.Component {
-  constructor(props) {
-    super(props);
+export default class Comment extends Component {
+  rawMarkup() {
+    let raw = marked(this.props.children.toString(), {sanitize: true});
+    return { __html: raw };
   }
-
   render() {
-    return(
-      <div className='commentBox'>
-        Hello, world! I am a CommentBox.
-        <p>hoge</p>
+    return (
+      <div className="comment">
+        <h2 className="commentAuthor">
+          {this.props.author}
+        </h2>
+        <span dangerouslySetInnerHTML={this.rawMarkup()} />
       </div>
     );
   }
 }
+
+Comment.propTypes = {
+  author : PropTypes.string.isRequired,
+  children : PropTypes.string.isRequired
+};
