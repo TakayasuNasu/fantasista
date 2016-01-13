@@ -12,7 +12,7 @@ export default function dispach(app) {
   app.get('/user/:id', (req, res) => {users.index(req, res);});
 
   const comments = new Comments();
-  app.get('/api/comments', (req, res) => {comments.index(req, res)});
+  app.get( '/api/comments', (req, res) => {comments.index(req, res)});
   app.post('/api/comments', (req, res) => {comments.index(req, res)});
 
 }
