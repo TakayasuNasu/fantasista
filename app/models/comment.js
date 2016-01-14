@@ -5,7 +5,7 @@ import configureStore from '../client/store/configureStore';
 import App from '../client/containers/app';
 import Base from './base-model';
 
-export default class Comment extends Base{
+export default class Comment extends Base {
   constructor(title = 'Hello world') {
     super(title);
   }

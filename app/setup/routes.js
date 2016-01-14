@@ -1,5 +1,6 @@
 import Index from "../controllers/main/index-controller";
 import Users from "../controllers/main/users-controller";
+import Memos from "../controllers/main/memos-controller";
 import Comments from "../controllers/api/comments-controller";
 
 export default function dispach(app) {
@@ -10,6 +11,9 @@ export default function dispach(app) {
 
   const users = new Users("ken");
   app.get('/user/:id', (req, res) => {users.index(req, res);});
+
+  const memos = new Memos();
+  app.get('/memo*', (req, res) => {memos.index(req, res);});
 
   const comments = new Comments();
   app.get( '/api/comments', (req, res) => {comments.index(req, res)});
