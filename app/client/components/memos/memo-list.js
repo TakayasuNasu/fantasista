@@ -4,8 +4,14 @@ import { render } from 'react-dom';
 export default class MemoList extends React.Component {
   render() {
     return(
-      <div className='memoList'>
-        Hello, world! I am a CommentBox.
+      <div>
+        <header>
+          this is header
+        </header>
+          {this.props.children}
+        <footer>
+          this is footer
+        </footer>
       </div>
     );
   }

@@ -13,7 +13,7 @@ export default function dispach(app) {
   app.get('/user/:id', (req, res) => {users.index(req, res);});
 
   const memos = new Memos();
-  app.get('/memo*', (req, res) => {memos.index(req, res);});
+  app.get('/memo(/:id([a-z]+))?',    (req, res) => {memos.index(req, res);});
 
   const comments = new Comments();
   app.get( '/api/comments', (req, res) => {comments.index(req, res)});
