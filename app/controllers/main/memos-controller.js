@@ -1,6 +1,7 @@
 import React from "react";
 import { renderToString } from 'react-dom/server';
 import { match, RoutingContext } from 'react-router';
+import Helmet from "react-helmet";
 import routes from "../../shared/routes";
 import Memo from "../../models/memo";
 
@@ -17,9 +18,12 @@ export default class MemoController {
         } else if (redirectLocation) {
           res.redirect(302, redirectLocation.pathname + redirectLocation.search);
         } else if (renderProps) {
+          let content = renderToString(<RoutingContext {...renderProps} />);
+          let head = Helmet.rewind();
           res.render('main/memo', {
             title:   this.memo.title,
-            content: renderToString(<RoutingContext {...renderProps} />)
+            content: content,
+            meta:    head.meta.toString()
           });
         }
     });
