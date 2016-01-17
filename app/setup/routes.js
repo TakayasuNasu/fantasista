@@ -1,6 +1,8 @@
 import Index from "../controllers/main/index-controller";
 import Users from "../controllers/main/users-controller";
 import Memos from "../controllers/main/memos-controller";
+import Auth  from "../controllers/main/auth-controller";
+
 import Comments from "../controllers/api/comments-controller";
 
 export default function dispach(app) {
@@ -14,6 +16,10 @@ export default function dispach(app) {
 
   const memos = new Memos();
   app.get('/memo(/:id([a-z]+))?', (req, res) => {memos.index(req, res)});
+
+  const auth = new Auth();
+  app.get('/auth/login', (req, res) => {auth.login(req, res)});
+  app.post('/login',     (req, res) => {auth.auth(req, res)});
 
   const comments = new Comments();
   app.get( '/api/comments', (req, res) => {comments.index(req, res)});
