@@ -18,10 +18,18 @@ export default function init(app) {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  passport.serializeUser((user, done) => {
+    done(null, user);
+  });
+
+  passport.deserializeUser((id, done) => {
+    done(null, id);
+  });
+
   passport.use(new Strategy(
     (username, password, done) => {
-      console.log(345);
-      return done(null, true, { message: 'hoge' });
+      console.log(username);
+      return done(null, true);
     }
   ));
 

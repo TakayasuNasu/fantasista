@@ -1,4 +1,3 @@
-import passport from 'passport';
 
 export default class AuthController {
   constructor(name = "login") {
@@ -7,13 +6,6 @@ export default class AuthController {
 
   login(req, res) {
     res.render('main/auth/login', { title: this.name });
-  }
-
-  auth(req, res) {
-    passport.authenticate('local', { failureRedirect: '/auth/login' }),
-    (req, res) => {
-      res.redirect('/hello');
-    }
   }
 
 }
