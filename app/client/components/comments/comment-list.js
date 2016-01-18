@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Comment from './comment'
+import Draggable from '../draggable/draggable'
 import Waypoint from 'react-waypoint';
 
 export default class CommentList extends Component {
@@ -34,6 +35,7 @@ export default class CommentList extends Component {
     });
     return (
       <div className="commentList">
+        <Draggable />
         {commentNodes}
         {this.renderMessage()}
         <div className="spacer" />
