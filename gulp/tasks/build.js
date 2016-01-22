@@ -19,4 +19,13 @@ gulp.task('build', () => {
     .pipe(buffer())
     .pipe(gulp.dest(config.build.dest))
     .pipe(browserSync.reload({stream: true}));
+
+   browserify({entries: ['./app/route.js']})
+    .transform(babelify)
+    .bundle()
+    .on('error', errorHandler)
+    .pipe(source('route.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest(config.build.dest))
+    .pipe(browserSync.reload({stream: true}));
 });

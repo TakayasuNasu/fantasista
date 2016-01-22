@@ -3,4 +3,6 @@ extends ../../layouts/application
 block content
   h1= title
   p Welcome to #{title}
+  div#content!= content
+  script(src='/js/route.js')
 

@@ -35,7 +35,6 @@ export default class CommentList extends Component {
     });
     return (
       <div className="commentList">
-        <Draggable />
         {commentNodes}
         {this.renderMessage()}
         <div className="spacer" />
